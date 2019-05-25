@@ -30,9 +30,20 @@ Type the following:
 
 In the stript dir, in command lime interface, type:
 
-    python yuyu.py [your papers, parer dirs or urls] [-d dst]
+    python yuyu.py [your papers, parer dirs or urls] [-d dst] [-s title_size_start title_size_end] [-t True|False]
 
 Have fun!
+
+More detail:
+
+``` python
+argparser.add_argument('objs', nargs='+', help='the file path, dir path or url')
+argparser.add_argument('-d', '--dst', default='d:/papers', help="the dst path")
+argparser.add_argument('-s', '--size', nargs=2, default=[18, 39], 
+help="the range of title size")
+argparser.add_argument('-t', '--test', type=bool, default=False, 
+help="whether to output html file to see the title size, dst is this dir")
+```
 
 ## Development
 
