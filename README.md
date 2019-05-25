@@ -34,7 +34,7 @@ In the stript dir, in command lime interface, type:
 
 Have fun!
 
-More detail:
+More details:
 
 ``` python
 argparser.add_argument('objs', nargs='+', help='the file path, dir path or url')
