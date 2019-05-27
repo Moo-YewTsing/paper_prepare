@@ -41,9 +41,7 @@ def download(url, dst):
     try:
         os.system("aria2c {} -d {}".format(url, dst))
     except Exception as e:
-        print('{} download error'.format(url))
-        print(e)
-        raise RuntimeError
+        raise RuntimeError('{} download error for {}'.format(url, e))
     else:
         print('{} download done'.format(url))
 
@@ -97,7 +95,7 @@ def change_name(f_p, start, end, test=False):
             save_html(html, os.path.basename(f_p[:-4]))
         title = get_title(html, start, end)
         if title == '':
-            print('{} title detection fail, try to change the "--size" parameter')
+            raise RuntimeError('{} title detection fail, try to change the "--size" parameter')
         else:
             f_n = "{}.pdf".format(title)
             os.rename(f_p, os.path.join(os.path.dirname(f_p), f_n))
@@ -131,7 +129,7 @@ by title in pdf. BTW, Yuyu, please be happy! ^_^""")
             else:
                 f_p = get_latest(dst)
                 change_name(f_p, start, end, test=test)
-        
+                
         elif os.path.isdir(obj):
             for f_p in filter(lambda x:x.endswith('pdf'), get_files(obj)):
                 change_name(f_p, start, end, test=test)
