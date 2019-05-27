@@ -124,7 +124,8 @@ by title in pdf. BTW, Yuyu, please be happy! ^_^""")
             os.makedirs(dst, exist_ok=True)
             try:
                 download(obj, dst)
-            except RuntimeError:
+            except RuntimeError as download_e:
+                print(download_e)
                 continue
             else:
                 f_p = get_latest(dst)
