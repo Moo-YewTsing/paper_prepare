@@ -110,7 +110,7 @@ if __name__ == "__main__":
 by title in pdf. BTW, Yuyu, please be happy! ^_^""")
     argparser.add_argument('objs', nargs='+', help='the file path, dir path or url')
     argparser.add_argument('-d', '--dst', default='d:/papers', help="the dst path")
-    argparser.add_argument('-s', '--size', nargs=2, default=[18, 39], 
+    argparser.add_argument('-s', '--size', nargs=2, default=[20, 39], 
     help="the range of title size")
     argparser.add_argument('-t', '--test', type=bool, default=False, 
     help="whether to output html file to see the title size, dst is this dir")
@@ -129,7 +129,7 @@ by title in pdf. BTW, Yuyu, please be happy! ^_^""")
             else:
                 f_p = get_latest(dst)
                 change_name(f_p, start, end, test=test)
-                
+
         elif os.path.isdir(obj):
             for f_p in filter(lambda x:x.endswith('pdf'), get_files(obj)):
                 change_name(f_p, start, end, test=test)
