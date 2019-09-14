@@ -1,38 +1,44 @@
-# paper_prepare
+# Paper Prep
 
 ## Prerequisite
 
-1. downloader [aria2c](https://aria2.github.io/)
+1. Python
 
-Make sure this downloader is in you PC environment.
-
-2. python
-
-Just Google what it is.
-
-3. pdfminer
+2. Pdfminer
 
 I you are in PRC, please check [here](https://mirrors.ustc.edu.cn/help/pypi.html) to have a better experience while using **pip**.
 
 I recommand you set a new environment. But I know lots of people love mess. Only until they pay for it, they can understand the importance of tidiness.
 
-No matter what, type the following:
+NEVERMIND, type the following:
 
     pip install pdfminer.six
 
-4. beautifulsoup4
+3. Beautifulsoup4
 
 Type the following:
 
     pip install beautifulsoup4
 
+4. Downloader
+
+Type the following:
+
+    pip install requests
+
 ## Usage
 
 In the stript dir, in command lime interface, type:
 
-    python yuyu.py [your papers, parer dirs or urls] [-d dst] [-s title_size_start title_size_end] [-t True|False]
+    python get_paper.py [your papers, parer dirs or urls] [-d dst] [-s title_size_start title_size_end] [-t True|False]
 
-Have fun!
+For example, to download this [paper](https://www.jmir.org/2005/1/e1/pdf) in your "D:\\" disk, the command line is
+
+    python get_paper.py https://www.jmir.org/2005/1/e1/pdf -d D:\
+
+P.S. The backlash is different in Windows and Linux. Here, it's in Window system.
+
+**Have fun!**
 
 More details:
 
@@ -47,7 +53,5 @@ help="whether to output html file to see the title size, dst is this dir")
 
 ## Development
 
-- [x] Girlfriend asks
-- [x] Girlfriend is unhappy
-- [ ] Girlfriend tests
-- [ ] Girlfriend's mood
+- [x] Friend ask
+- [ ] Friend test
